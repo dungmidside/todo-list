@@ -1,6 +1,7 @@
-export function addTodo(text) {
+export const ADD = 'ADD';
+export function add(text) {
   return {
-    type: 'ITEMS_ADD',
-    payload: items
+    type: 'ADD',
+    value: text
   }
 }

@@ -1,4 +1,4 @@
-import TodoList from './components/TodoList'
+import TodoList from './components/Todo'
 import TodoReducer from './reducers/Todo'
 
 export {
