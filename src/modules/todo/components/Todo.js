@@ -5,6 +5,7 @@ import * as todoAction from '../actions';
 class TodoList extends React.Component {
   constructor(props) {
     super(props);
+    console.log(props);
     this.state = { value: '' };
   }
 
@@ -12,6 +13,10 @@ class TodoList extends React.Component {
     this.props.add(this.state.value);
     this.setState({ value: '' });
     this.input.focus();
+  }
+
+  checkTodo(index) {
+    this.props.check(index);
   }
 
   removeTodo(index) {
@@ -37,13 +42,26 @@ class TodoList extends React.Component {
         </div>
 
         <div>
+          <p />
+          <button>Checked</button>
+          <button>Uncheck</button>
+          <button>All</button>
+          <p />
+        </div>
+
+        <div>
           <div>
             <ul>
-              {todoList.map((todo, index) => {
+              {todoList.map((todo) => {
                 return (
-                  <div key={index}>
-                    <li>{todo.value}</li>
-                    <button onClick={() => this.removeTodo(index)}>Remove</button>
+                  <div key={todo.index}>
+                    <li
+                      onClick={() => this.checkTodo(todo.index)}
+                      style={{ textDecoration: todo.check ? 'line-through' : 'none' }}
+                    >
+                      {todo.value}
+                    </li>
+                    <button onClick={() => this.removeTodo(todo.index)}>Remove</button>
                   </div>
                 );
               })}
@@ -53,6 +71,11 @@ class TodoList extends React.Component {
       </div>
     )
   }
+
+  componentDidMount() {
+    this.props.fetchData();
+    console.log(this.props.todoList);
+  }
 }
 
 export default connect(
@@ -61,6 +84,9 @@ export default connect(
   }),
   dispatch => ({
     add: value => dispatch(todoAction.add(value)),
-    remove: index => dispatch(todoAction.remove(index))
+    check: index => dispatch(todoAction.check(index)),
+    remove: index => dispatch(todoAction.remove(index)),
+    load: data => dispatch(todoAction.load(data)),
+    fetchData: () => dispatch(todoAction.fetchData())
   }))
   (TodoList);

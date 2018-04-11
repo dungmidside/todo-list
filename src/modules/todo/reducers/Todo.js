@@ -1,7 +1,7 @@
-import { ADD, REMOVE } from '../actions';
+import { ADD, REMOVE, CHECK, LOAD } from '../actions';
 
 const initialState = {
-  todoList: []
+  todoList: [],
 }
 
 export default function todo(state = initialState, action) {
@@ -9,16 +9,33 @@ export default function todo(state = initialState, action) {
     case ADD:
       var todoNew = {
         check: false,
-        value: action.value
+        value: action.value,
+        index: action.index
       };
       return {
         ...state,
-        todoList: [...state.todoList, todoNew]
+        todoList: [...state.todoList, todoNew],
       };
     case REMOVE:
       return {
         ...state,
-        todoList: state.todoList.filter((todo, index) => index !== action.index)
+        todoList: state.todoList.filter(todo => todo.index !== action.index),
+      }
+    case CHECK:
+      var listTemp = [...state.todoList];
+      listTemp.map(todo => {
+        if (todo.index === action.index) {
+          todo.check = !todo.check;
+        }
+      });
+      return {
+        ...state,
+        todoList: listTemp,
+      }
+    case LOAD:
+      return {
+        ...state,
+        todoList: action.data,
       }
     default:
       return state;

@@ -1,10 +1,12 @@
 {
 	"todos": [
         {
+            "index": 0,
             "check": false,
             "value": "Learn React"
         },
         {
+            "index": 1,
             "check": false,
             "value": "Learn Redux"
         }
