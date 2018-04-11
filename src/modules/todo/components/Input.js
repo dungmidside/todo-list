@@ -1,9 +1,20 @@
-import React from 'React';
+import React from 'react';
+import { connect } from 'react-redux'
+import { add } from '../actions'
 
 class Input extends React.Component {
   constructor(props) {
     super(props);
+    // console.log(props);
+    this.state = { value: '' }
   }
+
+  submitTodo() {
+    this.props.dispatch(add(this.state.value));
+    this.setState({ value: ''});
+    this.input.focus();
+  }
+
   render() {
     return (
       <div>
@@ -23,4 +34,4 @@ class Input extends React.Component {
   }
 }
 
-export default Input;
+export default connect()(Input);

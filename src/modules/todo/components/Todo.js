@@ -1,18 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import * as todoAction from '../actions';
+import Input from './Input'
 
 class TodoList extends React.Component {
   constructor(props) {
     super(props);
-    console.log(props);
     this.state = { value: '' };
-  }
-
-  submitTodo() {
-    this.props.add(this.state.value);
-    this.setState({ value: '' });
-    this.input.focus();
   }
 
   checkTodo(index) {
@@ -28,18 +22,7 @@ class TodoList extends React.Component {
     const todoList = this.props.todoList;
     return (
       <div>
-        <div>
-          <form onSubmit={e => {
-            e.preventDefault();
-            this.submitTodo();
-          }}>
-            <input type="text"
-              onChange={e => this.setState({ value: e.target.value })}
-              value={this.state.value}
-              ref={node => this.input = node} />
-            <button type="submit">Add</button>
-          </form>
-        </div>
+        <Input />
 
         <div>
           <p />
@@ -74,7 +57,6 @@ class TodoList extends React.Component {
 
   componentDidMount() {
     this.props.fetchData();
-    console.log(this.props.todoList);
   }
 }
 
@@ -83,7 +65,6 @@ export default connect(
     todoList: state.todo.todoList
   }),
   dispatch => ({
-    add: value => dispatch(todoAction.add(value)),
     check: index => dispatch(todoAction.check(index)),
     remove: index => dispatch(todoAction.remove(index)),
     load: data => dispatch(todoAction.load(data)),
