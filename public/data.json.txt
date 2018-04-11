@@ -1,0 +1,12 @@
+{
+	"todos": [
+        {
+            "check": false,
+            "value": "Learn React"
+        },
+        {
+            "check": false,
+            "value": "Learn Redux"
+        }
+    ]
+}

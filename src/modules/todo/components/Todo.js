@@ -14,10 +14,13 @@ class TodoList extends React.Component {
     this.input.focus();
   }
 
+  removeTodo(index) {
+    this.props.remove(index)
+  }
+
   render() {
     let input;
     const todoList = this.props.todoList;
-    // console.log(todoList);
     return (
       <div>
         <div>
@@ -35,14 +38,16 @@ class TodoList extends React.Component {
 
         <div>
           <div>
-            {todoList.map((todo, index) => {
-              return (
-                <div key={index}>
-                  {todo.value}
-                </div>
-              );
-            }
-            )}
+            <ul>
+              {todoList.map((todo, index) => {
+                return (
+                  <div key={index}>
+                    <li>{todo.value}</li>
+                    <button onClick={() => this.removeTodo(index)}>Remove</button>
+                  </div>
+                );
+              })}
+            </ul>
           </div>
         </div>
       </div>
@@ -55,5 +60,7 @@ export default connect(
     todoList: state.todo.todoList
   }),
   dispatch => ({
-    add: value => dispatch(todoAction.add(value))
-  }))(TodoList);
+    add: value => dispatch(todoAction.add(value)),
+    remove: index => dispatch(todoAction.remove(index))
+  }))
+  (TodoList);

@@ -5,3 +5,11 @@ export function add(value) {
     value: value
   };
 }
+
+export const REMOVE = "REMOVE";
+export function remove(index) {
+  return {
+    type: REMOVE,
+    index: index
+  }
+}

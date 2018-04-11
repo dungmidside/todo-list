@@ -1,4 +1,4 @@
-import { ADD } from '../actions';
+import { ADD, REMOVE } from '../actions';
 
 const initialState = {
   todoList: []
@@ -15,6 +15,11 @@ export default function todo(state = initialState, action) {
         ...state,
         todoList: [...state.todoList, todoNew]
       };
+    case REMOVE:
+      return {
+        ...state,
+        todoList: state.todoList.filter((todo, index) => index !== action.index)
+      }
     default:
       return state;
   }
