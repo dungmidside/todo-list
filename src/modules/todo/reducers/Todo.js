@@ -1,19 +1,19 @@
-import { ADD } from '../actions/index';
+import { ADD } from '../actions';
 
 const initialState = {
-  todoList: ['todo-001', 'todo-002', 'todo-003']
+  todoList: []
 }
 
 export default function todo(state = initialState, action) {
   switch (action.type) {
     case ADD:
-      let todo_new = {
+      var todoNew = {
         check: false,
         value: action.value
-      }
+      };
       return {
         ...state,
-        todoList: [...state, todo_new]
+        todoList: [...state.todoList, todoNew]
       };
     default:
       return state;
