@@ -19,6 +19,7 @@ export default class App extends React.Component {
 							<li><Link to="/app">App</Link></li>
 						</ul>
 
+						<Route exact path="/login" component={() => <div></div>}/>
 						<Route exact path="/" component={Home} />
 						<Route exact path="/app" component={TodoApp} />
 					</div>

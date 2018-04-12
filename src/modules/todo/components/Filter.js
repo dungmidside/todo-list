@@ -18,4 +18,4 @@ const Filter = () => {
   )
 }
 
-export default Filter;
+export default connect()(Filter);
