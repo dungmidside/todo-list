@@ -1,4 +1,4 @@
-import TodoApp from './components/Todo'
+import TodoApp from './components/TodoApp'
 import TodoReducer from './reducers/Todo'
 
 export {

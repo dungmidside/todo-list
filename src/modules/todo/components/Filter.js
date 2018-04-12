@@ -10,7 +10,8 @@ const Filter = () => {
       </ContainerFilterMode>
       <ContainerFilterMode filterMode={ListFilterMode.CHECK}>
         CHECK
-      </ContainerFilterMode><ContainerFilterMode filterMode={ListFilterMode.UNCHECK}>
+      </ContainerFilterMode>
+      <ContainerFilterMode filterMode={ListFilterMode.UNCHECK}>
         UNCHECK
       </ContainerFilterMode>
     </div>
