@@ -35,6 +35,20 @@ export function load(data) {
   }
 }
 
+export const FILTER = "FILTER";
+export function filter(filterMode) {
+  return {
+    type: FILTER,
+    filterMode: filterMode
+  }
+}
+
+export const ListFilterMode = {
+  ALL: "ALL",
+  CHECK: "CHECK",
+  UNCHECK: "UNCHECK"
+}
+
 export function fetchData() {
   return (dispatch) => {
     FetchHelper.fetch('./data.json').then(([data, status]) => {

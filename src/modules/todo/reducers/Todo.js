@@ -1,7 +1,8 @@
-import { ADD, REMOVE, CHECK, LOAD } from '../actions';
+import { ADD, REMOVE, CHECK, LOAD, FILTER, ListFilterMode } from '../actions';
 
 const initialState = {
   todoList: [],
+  filterMode: ListFilterMode.ALL
 }
 
 export default function todo(state = initialState, action) {
@@ -36,6 +37,11 @@ export default function todo(state = initialState, action) {
       return {
         ...state,
         todoList: action.data,
+      }
+    case FILTER:
+      return {
+        ...state,
+        filterMode: action.filterMode
       }
     default:
       return state;
