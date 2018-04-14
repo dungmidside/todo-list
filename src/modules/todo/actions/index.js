@@ -37,6 +37,7 @@ export function load(data) {
 
 export const FILTER = "FILTER";
 export function filter(filterMode) {
+  console.log(filterMode);
   return {
     type: FILTER,
     filterMode: filterMode

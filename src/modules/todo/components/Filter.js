@@ -1,21 +1,22 @@
-import React from 'react';
-import ContainerFilterMode from '../container/ContainerFilterMode';
-import { ListFilterMode } from '../actions';
+import React from "react";
+import { connect } from "react-redux";
+import { ListFilterMode, filter } from "../actions";
 
-const Filter = () => {
+const Filter = ({ changebutton }) => {
   return (
     <div>
-      <ContainerFilterMode filterMode={ListFilterMode.ALL}>
-        ALL
-      </ContainerFilterMode>
-      <ContainerFilterMode filterMode={ListFilterMode.CHECK}>
-        CHECK
-      </ContainerFilterMode>
-      <ContainerFilterMode filterMode={ListFilterMode.UNCHECK}>
-        UNCHECK
-      </ContainerFilterMode>
+      <button onClick={() => changebutton(ListFilterMode.ALL)}>ALL</button>
+      <button onClick={() => changebutton(ListFilterMode.CHECK)}>CHECK</button>
+      <button onClick={() => changebutton(ListFilterMode.UNCHECK)}>UNCHECK</button>
     </div>
-  )
-}
+  );
+};
 
-export default Filter;
+export default connect(
+  state => ({
+    currentbutton: state.button
+  }),
+  dispatch => ({
+    changebutton: button => dispatch(filter(button))
+  })
+)(Filter);

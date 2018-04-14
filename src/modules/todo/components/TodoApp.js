@@ -1,6 +1,6 @@
 import React from 'react';
-import Input from '../container/Input';
-import VisiableTodoList from '../container/VisiableTodoList';
+import Input from './Input';
+import VisiableTodoList from './VisiableTodoList';
 import Filter from '../components/Filter';
 
 class TodoApp extends React.Component {
