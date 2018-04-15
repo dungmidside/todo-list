@@ -1,0 +1,21 @@
+.header {
+  margin: 1em 0;
+  /* background: #cedaed; */
+}
+
+.body {
+  margin: 1em;
+}
+
+.body ul li {
+  cursor: pointer;
+}
+
+.filter button {
+  margin: 0 0.5em;
+}
+
+.list-todo {
+  margin: 1em 0;
+}
+

@@ -3,8 +3,8 @@ import TodoItem from './TodoItem'
 
 const TodoList = ({ todos, checkTodo, removeTodo }) => {
   return (
-    <div>
-      <ul>
+    <div className="list-todo">
+      <ul className="list-group">
         {todos.map((todo) => {
           return (
             <TodoItem

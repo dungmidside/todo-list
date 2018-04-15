@@ -1,20 +1,22 @@
-import React from 'react';
+import React from "react";
 
 const TodoItem = ({ todo, onClick, onRemove }) => {
   return (
-    <div>
+    <div className="list-item">
       <li
+        className="list-group-item d-flex justify-content-between align-items-center"
         onClick={onClick}
         style={{
-          textDecoration: todo.check ? 'line-through' :
-            'none'
+          textDecoration: todo.check ? "line-through" : "none"
         }}
       >
         {todo.value}
+        <span class="badge badge-primary badge-pill">
+          <div className="fa fa-trash-alt" onClick={onRemove} />
+        </span>
       </li>
-      <button onClick={onRemove}>Remove</button>
     </div>
-  )
-}
+  );
+};
 
 export default TodoItem;

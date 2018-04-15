@@ -1,22 +1,39 @@
-import React from 'react';
-import Input from './Input';
-import VisiableTodoList from './VisiableTodoList';
-import Filter from '../components/Filter';
+import React from "react";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import Home from "./Home";
+import Todo from "./Todo";
 
-class TodoApp extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    return (
+const TodoApp = () => {
+  return (
+    <Router>
       <div>
-        <Input />
-        <Filter />
-        <VisiableTodoList />
+        <div className="container">
+          <div className="header row justify-content-md-center">
+            <div className="col-md-4">
+              <nav className="nav nav-pills justify-content-center">
+                <li className="nav-item">
+                  <Link to="/" className="nav-link">
+                    Home
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link to="/App" className="nav-link">
+                    App
+                  </Link>
+                </li>
+              </nav>
+            </div>
+          </div>
+          <div className="body row justify-content-md-center">
+            <div className="col-md-4">
+              <Route exact path="/" component={Home} />
+              <Route exact path="/app" component={Todo} />
+            </div>
+          </div>
+        </div>
       </div>
-    )
-  }
-}
+    </Router>
+  );
+};
 
 export default TodoApp;

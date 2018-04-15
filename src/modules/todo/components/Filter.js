@@ -4,10 +4,27 @@ import { ListFilterMode, filter } from "../actions";
 
 const Filter = ({ changebutton }) => {
   return (
-    <div>
-      <button onClick={() => changebutton(ListFilterMode.ALL)}>ALL</button>
-      <button onClick={() => changebutton(ListFilterMode.CHECK)}>CHECK</button>
-      <button onClick={() => changebutton(ListFilterMode.UNCHECK)}>UNCHECK</button>
+    <div className="filter">
+      <div className="row justify-content-md-center">
+        <button
+          className="btn btn-outline-primary"
+          onClick={() => changebutton(ListFilterMode.ALL)}
+        >
+          ALL
+        </button>
+        <button
+          className="btn btn-outline-primary"
+          onClick={() => changebutton(ListFilterMode.CHECK)}
+        >
+          CHECK
+        </button>
+        <button
+          className="btn btn-outline-primary"
+          onClick={() => changebutton(ListFilterMode.UNCHECK)}
+        >
+          UNCHECK
+        </button>
+      </div>
     </div>
   );
 };

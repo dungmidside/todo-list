@@ -4,6 +4,5 @@ import TodoReducer from './reducers/Todo'
 
 export {
 	TodoApp,
-	Home,
 	TodoReducer
 }
