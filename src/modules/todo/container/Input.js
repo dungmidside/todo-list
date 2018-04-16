@@ -5,7 +5,7 @@ import * as todoAction from '../actions'
 class Input extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { value: '' }
+    this.setState = { value: '' }
   }
 
   submitTodo() {
