@@ -3,6 +3,11 @@ import FetchHelper from '../../../helpers/FetchHelper';
 var indexTodo = 0;
 
 export const ADD = "ADD";
+export const REMOVE = "REMOVE";
+export const CHECK = "CHECK";
+export const LOAD = "LOAD";
+export const FILTER = "FILTER";
+
 export function add(value) {
   return {
     type: ADD,
@@ -11,7 +16,6 @@ export function add(value) {
   };
 }
 
-export const REMOVE = "REMOVE";
 export function remove(index) {// action creator
   return {
     type: REMOVE,
@@ -19,7 +23,6 @@ export function remove(index) {// action creator
   }
 }
 
-export const CHECK = "CHECK";
 export function check(index) {// action creator
   return {
     type: CHECK,
@@ -27,7 +30,6 @@ export function check(index) {// action creator
   }
 }
 
-export const LOAD = "LOAD";
 export function load(data) {
   return {
     type: LOAD,
@@ -35,7 +37,6 @@ export function load(data) {
   }
 }
 
-export const FILTER = "FILTER";
 export function filter(filterMode) {
   console.log(filterMode);
   return {

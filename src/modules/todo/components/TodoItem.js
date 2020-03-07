@@ -1,6 +1,6 @@
 import React from "react";
 
-const TodoItem = ({ todo, onClick, onRemove }) => {
+export default ({ todo, onClick, onRemove }) => {
   return (
     <div className="list-item">
       <li
@@ -18,5 +18,3 @@ const TodoItem = ({ todo, onClick, onRemove }) => {
     </div>
   );
 };
-
-export default TodoItem;

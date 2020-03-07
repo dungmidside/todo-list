@@ -2,25 +2,25 @@ import React from "react";
 import { connect } from "react-redux";
 import { ListFilterMode, filter } from "../actions";
 
-const Filter = ({ changebutton }) => {
+const Filter = ({ changeMode }) => {
   return (
     <div className="filter">
       <div className="row justify-content-md-center">
         <button
           className="btn btn-outline-primary"
-          onClick={() => changebutton(ListFilterMode.ALL)}
+          onClick={() => changeMode(ListFilterMode.ALL)}
         >
           ALL
         </button>
         <button
           className="btn btn-outline-primary"
-          onClick={() => changebutton(ListFilterMode.CHECK)}
+          onClick={() => changeMode(ListFilterMode.CHECK)}
         >
           CHECK
         </button>
         <button
           className="btn btn-outline-primary"
-          onClick={() => changebutton(ListFilterMode.UNCHECK)}
+          onClick={() => changeMode(ListFilterMode.UNCHECK)}
         >
           UNCHECK
         </button>
@@ -34,6 +34,6 @@ export default connect(
     currentbutton: state.button
   }),
   dispatch => ({
-    changebutton: button => dispatch(filter(button))
+    changeMode: button => dispatch(filter(button))
   })
 )(Filter);

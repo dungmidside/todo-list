@@ -1,7 +1,7 @@
 import React from "react";
-import Input from "./Input";
 import VisiableTodoList from "./VisiableTodoList";
 import Filter from "../components/Filter";
+import Input from './Input';
 
 const Todo = () => {
   return (
