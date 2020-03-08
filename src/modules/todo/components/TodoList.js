@@ -1,7 +1,7 @@
 import React from 'react'
 import TodoItem from './TodoItem'
 
-const TodoList = ({ todos, checkTodo, removeTodo }) => {
+export default ({ todos, onChecked, onRemove }) => {
   return (
     <div className="list-todo">
       <ul className="list-group">
@@ -10,13 +10,11 @@ const TodoList = ({ todos, checkTodo, removeTodo }) => {
             <TodoItem
               key={todo.index}
               todo={todo}
-              onClick={() => checkTodo(todo.index)}
-              onRemove={() => removeTodo(todo.index)}
+              onClick={() => onChecked(todo.index)}
+              onRemove={() => onRemove(todo.index)}
             />)
         })}
       </ul>
     </div>
   )
 }
-
-export default TodoList;

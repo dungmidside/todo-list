@@ -1,20 +1,18 @@
 import React, { useState, useEffect } from "react";
-import { connect } from 'react-redux';
-import * as todoAction from '../actions';
 
-function Input(props) {
-  const [value, setValue] = useState('');
+export default ({ onAdd }) => {
+  const [value, setValue] = useState("");
 
   const submitTodo = () => {
     if (!value) {
       return;
-    } 
-    props.dispatch(todoAction.add(value.trim()));
-    setValue('');
+    }
+    onAdd(value);
+    setValue("");
   };
 
   return (
-    <div class="form-input">
+    <div className="form-input">
       <form
         onSubmit={e => {
           e.preventDefault();
@@ -33,6 +31,4 @@ function Input(props) {
       </form>
     </div>
   );
-}
-
-export default connect()(Input);
+};

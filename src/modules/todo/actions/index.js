@@ -1,6 +1,6 @@
 import FetchHelper from '../../../helpers/FetchHelper';
 
-var indexTodo = 0;
+let indexTodo = 0;
 
 export const ADD = "ADD";
 export const REMOVE = "REMOVE";
@@ -8,7 +8,7 @@ export const CHECK = "CHECK";
 export const LOAD = "LOAD";
 export const FILTER = "FILTER";
 
-export function add(value) {
+export const add = (value) => {
   return {
     type: ADD,
     value: value,
@@ -16,36 +16,35 @@ export function add(value) {
   };
 }
 
-export function remove(index) {// action creator
+export const remove = (index) => {
   return {
     type: REMOVE,
     index: index
   }
 }
 
-export function check(index) {// action creator
+export const check = (index) => {
   return {
     type: CHECK,
     index: index
   }
 }
 
-export function load(data) {
+export const load = (data) => {
   return {
     type: LOAD,
     data: data
   }
 }
 
-export function filter(filterMode) {
-  console.log(filterMode);
+export const filter = (filterMode) => {
   return {
     type: FILTER,
     filterMode: filterMode
   }
 }
 
-export const ListFilterMode = {
+export const FilterMode = {
   ALL: "ALL",
   CHECK: "CHECK",
   UNCHECK: "UNCHECK"

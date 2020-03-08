@@ -6,9 +6,7 @@ export default ({ todo, onClick, onRemove }) => {
       <li
         className="list-group-item d-flex justify-content-between align-items-center"
         onClick={onClick}
-        style={{
-          textDecoration: todo.check ? "line-through" : "none"
-        }}
+        style={{ textDecoration: todo.check ? "line-through" : "none" }}
       >
         {todo.value}
         <span class="badge badge-primary badge-pill">

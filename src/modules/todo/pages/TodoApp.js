@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import Home from "./Home";
-import Todo from "./Todo";
+import Home from "./HomePage";
+import TodoPage from "./TodoPage";
 
 const TodoApp = () => {
   return (
@@ -27,7 +27,7 @@ const TodoApp = () => {
           <div className="body row justify-content-md-center">
             <div className="col-md-4">
               <Route exact path="/" component={Home} />
-              <Route exact path="/app" component={Todo} />
+              <Route exact path="/app" component={TodoPage} />
             </div>
           </div>
         </div>

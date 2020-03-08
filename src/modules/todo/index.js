@@ -1,6 +1,5 @@
-import TodoApp from './components/TodoApp'
-import Home from './components/Home'
-import TodoReducer from './reducers/Todo'
+import TodoApp from './pages/TodoApp'
+import TodoReducer from './reducers'
 
 export {
 	TodoApp,
