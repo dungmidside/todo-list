@@ -1,14 +1,19 @@
 {
-	"todos": [
-        {
-            "index": 0,
-            "check": false,
-            "value": "Learn React"
-        },
-        {
-            "index": 1,
-            "check": false,
-            "value": "Learn Redux"
-        }
-    ]
+  "todos": [
+    {
+      "index": 0,
+      "check": false,
+      "value": "Learn React"
+    },
+    {
+      "index": 1,
+      "check": false,
+      "value": "Learn Redux"
+    },
+    {
+      "index": 2,
+      "check": false,
+      "value": "Learn to Rick"
+    }
+  ]
 }

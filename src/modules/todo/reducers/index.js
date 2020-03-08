@@ -1,4 +1,4 @@
-import { ADD, REMOVE, CHECK, LOAD, FILTER, FilterMode } from "../actions";
+import { ADD, REMOVE, CHECK, LOAD, FILTER, LOAD_DATA, FilterMode } from "../actions";
 
 const initialState = {
   todoList: [],
@@ -32,16 +32,16 @@ export default (state = initialState, action) => {
           return todo;
         })
       };
-    case LOAD:
-      return {
-        ...state,
-        todoList: action.data
-      };
     case FILTER:
       return {
         ...state,
         filterMode: action.filterMode
       };
+    case LOAD_DATA: 
+      return {
+        ...state,
+        todoList: action.payload.data,
+      }
     default:
       return state;
   }
